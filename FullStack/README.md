@@ -1,4 +1,4 @@
-# Road Map to become a Full Stack Developer
+# Full Stack Developer
 
 Every application has a user interface, a server to process requests and a process requests and a database to store data.
 
