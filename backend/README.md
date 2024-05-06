@@ -18,4 +18,47 @@
     "start": "nodemon dist/index.js"
 }
 ```
-- Step 3: Create a new javascript file and
+- Step 3: Create a new javascript file and name it as index.js and add these lines to connect the server to the MongoDB.
+
+
+```javascript
+const express = require("express");
+
+const app = express();
+
+const cors = require("cors");
+
+require("dotenv").config({ path: "./config.env" });
+const port = process.env.PORT || 5000;
+
+app.use(cors());
+
+app.use(express.json());
+
+app.use(require("./routes/record"));
+
+// Get MongoDB driver connection
+const dbo = require("./db/conn");
+ 
+app.listen(port, () => {
+  // Perform a database connection when server starts
+  dbo.connectToServer(function (err) {
+    if (err) console.error(err);
+ 
+  });
+  console.log(`Server is running on port: ${port}`);
+});
+```
+
+- Step 4: Install Mongoose and MongoDB drivers
+
+```sh
+    npm install mongoose
+```
+- Step 5: Connect to MongoDB Database
+create a new file name .env
+
+```sh
+ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/employees?retryWrites=true&w=majority
+PORT=5000
+```
