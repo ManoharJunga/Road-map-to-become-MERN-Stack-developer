@@ -3,12 +3,13 @@
 - Step 1: Create a new backend or Server Folder.
 - Initialize a new Node.js Project
 ```sh
+  cd backend
   npm init
 ```
 - Install the below dependencies
 
 ```sh
-    npm install express cors dotenv
+  npm install express cors dotenv
 ```
 - Step 2: Go to the package.json file and edit the script accordingly
 
@@ -41,22 +42,22 @@ app.listen(process.env.PORT, () => {
 - Step 4: Install Mongoose and MongoDB drivers
 
 ```sh
-    npm install mongoose
+  npm install mongoose
 ```
 
 ```sh
-npm i dotenv
+  npm i dotenv
 ```
 - Step 5: Connect to MongoDB Database,
 Create a new file name .env
 
 ```sh
-PORT=5000
+  PORT=5000
 ```
 
 - Step 6: To run the application Type this command in the terminal
 
 ```sh
-npm run start
+  npm run start
 ```
 
