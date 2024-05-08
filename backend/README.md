@@ -14,11 +14,10 @@
 
 ```javascript
 "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-    "start": "nodemon dist/index.js"
+    "start": "node index.js"
 }
 ```
-- Step 3: Create a new javascript file and name it as index.js and add these lines to connect the server to the MongoDB.
+- Step 3: Create a new javascript file and name it as index.js and add these lines into the file.
 
 
 ```javascript
