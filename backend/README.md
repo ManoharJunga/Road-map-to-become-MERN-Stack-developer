@@ -1,4 +1,4 @@
-# Steps to get Started with Backend Connection 
+# Steps to Deploy Backend. 
 
 - Step 1: Create a new backend or Server Folder.
 - Initialize a new Node.js Project
@@ -23,7 +23,7 @@
 
 ```javascript
 const express = require("express");
-
+require('dotenv').config()
 const app = express();
 const prot = 4000
 
@@ -32,7 +32,7 @@ app.get('/', (req, res) =>{
   
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
@@ -44,10 +44,20 @@ app.listen(port, () => {
 ```sh
     npm install mongoose
 ```
-- Step 5: Connect to MongoDB Database
-create a new file name .env
 
 ```sh
-ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/employees?retryWrites=true&w=majority
+npm i dotenv
+```
+- Step 5: Connect to MongoDB Database,
+Create a new file name .env
+
+```sh
 PORT=5000
 ```
+
+- Step 6: To run the application Type this command in the terminal
+
+```sh
+npm run start
+```
+
