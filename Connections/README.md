@@ -65,7 +65,7 @@ app.get('/api/jokes',(req, res) =>{
 
 ## 5. Fetching Data in Frontend
 Now that your backend is set up, it's time to fetch data from the backend into your frontend components using tools like Axios. Follow the steps below:
-1.Refer to the [Frontend Setup with React](../frontend/README.md) for detailed instructions on setting up the frontend.
+1.Refer to the [Frontend Setup with React](../Frontend/README.md) for detailed instructions on setting up the frontend.
 2.Once your frontend is set up, remove all the existing code in the App.jsx file and replace it with the following:
 
 ```javascript
