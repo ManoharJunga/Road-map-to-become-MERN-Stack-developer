@@ -25,26 +25,20 @@
 const express = require("express");
 require('dotenv').config()
 const app = express();
-const prot = 4000
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) =>{
   res.send('Hello World')
   
 })
 
-app.listen(process.env.PORT, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
+app.listen(port, () => {
+  console.log(`Example app listening on http://localhost:${port}`);
+});
 
 ```
 
-- Step 4: Install Mongoose and MongoDB drivers
-
-```sh
-  npm install mongoose
-```
-
+- Step 4: Create a folder .env and run that following command.
 ```sh
   npm i dotenv
 ```
