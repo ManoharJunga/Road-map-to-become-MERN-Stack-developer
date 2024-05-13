@@ -120,3 +120,12 @@ The main purpose of modeling in a database-driven application like this one is t
 6. Business Logic: Models can encapsulate business logic related to data manipulation and retrieval. This ensures consistency in how data is handled across different parts of the application.
 
 Overall, modeling serves as the foundation for building database-driven applications, providing structure, consistency, and organization to the data that the application manages.
+
+
+"I'm sharing my file here to demonstrate how data modeling is implemented in Mongoose."
+
+
+https://stackblitz.com/edit/stackblitz-starters-qbbqat?file=models%2Fhospital-management%2Fhospital.models.js
+
+
+
