@@ -56,4 +56,114 @@ Opening the file from your code editor's terminal with a browser (e.g., open ind
 </html>
 
 ```
-# Now Step by Step I will be explaining how these. got to the javascript file and see one by one command how it works.
+# Now Step by Step I will be explaining how javascript can be used.
+
+### Logging a Message to the Console:
+
+```javascript
+console.log('Hello, World!');
+```
+This statement logs the message "Hello, World!" to the browser's console.
+
+### Declaring and Logging a Variable:
+
+```javascript
+let js = "amazing";
+console.log(js);
+```
+This statement declares a variable 'js' and assigns it the value "amazing", then logs it to the console.
+
+### Performing a Simple Calculation:
+
+```javascript
+console.log(20 + 1 + 12 + 1);
+```
+This statement calculates the sum of 20, 1, 12, and 1, and logs the result to the console.
+
+### Variable Manipulations
+
+```javascript
+let x, y;
+x = 10;
+y = 20;
+let c = '56';
+
+console.log((x + y) - 56); // -26
+console.log(x + y + c);    // '3056'
+console.log(c + x + y);    // '561020'
+
+```
+- `(x + y) - 56`: Calculates the sum of `x` and `y`, then subtracts `56`, resulting in `-26`.
+- `x + y + c`: Concatenates the sum of `x` and `y` with the string `'56'`, resulting in the string `'3056'`.
+- `c + x + y`: Concatenates the string `'56'` with the string representations of `x` and `y`, resulting in the string `'561020'`.
+
+
+## Comparison Operators:
+### Equality Operator (==):
+
+```javascript
+console.log(5 == '5'); // true
+console.log(0 == false); // true
+console.log(null == undefined); // true
+```
+
+The `==` operator compares values regardless of their data types.
+
+### Strict Equality Operator (===)
+
+```javascript
+console.log(5 === '5'); // false
+console.log(0 === false); // false
+console.log(null === undefined); // false
+The === operator compares both values and types.
+```
+
+Using strict equality (`===`) is generally recommended because it avoids unexpected behavior that can occur due to type coercion. It ensures that both the values and types are identical for the comparison to evaluate to true.
+
+- Use `==` for loose equality comparisons where type conversion is acceptable.
+- Use `===` for strict equality comparisons where both value and type must match. This is usually the preferred option to avoid unexpected behavior.
+
+### Leap Year Check
+
+```javascript
+const year = prompt("Enter the year");
+
+if (year % 4 === 0) {
+    console.log(year + " is a leap year");
+} else {
+    console.log(year + " is not a leap year");
+}
+```
+This code checks if the entered year is a leap year.
+
+### Bitwise Operators
+
+```javascript
+let comp = 10;
+console.log(~comp); // Bitwise NOT operator
+console.log(comp << 1); // Left shift operator
+console.log(comp >> 1); // Right shift operator
+console.log(comp >>> 1); // Unsigned right shift operator
+```
+
+Bitwise operators perform operations at the bit level.
+
+### Data Types
+
+```javascript
+let JavaScript = true; // Boolean
+console.log(JavaScript); // true
+console.log(typeof JavaScript); // "boolean"
+console.log(typeof "JavaScript"); // "string"
+console.log(typeof 10); // "number"
+
+let javascriptFun = "manohar"; // String
+console.log(typeof javascriptFun); // "string"
+
+let year; // Undefined
+console.log(typeof year); // "undefined"
+
+year = 1919; // Number
+console.log(typeof year); // "number"
+```
+JavaScript supports various data types including boolean, string, number, and undefined.

@@ -89,3 +89,14 @@ for(let i=1;i<=10;i++){
     text+=i+" ";
 }
 console.log(text)
+
+// let i=prompt("Enter any number 1 2 3");
+// let number = Number(i);
+// switch(number){
+//     case 1: alert('1');break;
+//     case 2: alert('2');break;
+//     case 3: alert('3');break;
+//     default: alert('default');break;
+// }
+
+
