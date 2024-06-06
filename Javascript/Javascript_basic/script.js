@@ -47,3 +47,45 @@ console.log(null === undefined); // false, because they have different types
 //Using strict equality (===) is generally recommended because it avoids unexpected behavior that can occur due to type coercion. It ensures that both the values and types are identical for the comparison to evaluate to true.
 // Use == for loose equality comparisons where type conversion is acceptable.
 // Use === for strict equality comparisons where both value and type must match. This is usually the preferred option to avoid unexpected behavior.
+
+
+{/*
+const year =prompt("Enter the year");
+
+if(year%4===0){
+    console.log(year+" is a leap year");
+}
+else{
+    console.log(year+" is not a leap year");
+}
+*/}
+
+
+let comp = 10;
+console.log(~comp)
+console.log(comp<<1);
+console.log(comp>>1);
+console.log(comp>>>1);
+
+//Data types
+
+let JavaScript = true;
+console.log(JavaScript);
+console.log(typeof JavaScript)
+console.log(typeof "JavaScript")
+console.log(typeof 10)
+
+let javascriptFun = "manohar"
+console.log(typeof javascriptFun)
+
+let year
+console.log(typeof year)
+
+year = 1919
+console.log(typeof year)
+
+let text = " "
+for(let i=1;i<=10;i++){
+    text+=i+" ";
+}
+console.log(text)
