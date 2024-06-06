@@ -65,7 +65,7 @@ In JavaScript, functions are blocks of code that can be executed multiple times 
 ### Function Declarations
 
 Function declarations are defined using the `function` keyword followed by the function name and parameters in parentheses. For example:
-```
+```javascript
 function logger() {
     console.log("hello world!");
 }
@@ -73,7 +73,7 @@ function logger() {
 ### Function Expressions
 
 Function expressions are defined by assigning a function to a variable. For example:
-```
+```javascript
 const calcAge2 = function (birthYear) {
     return 2037 - birthYear;
 }
@@ -81,13 +81,13 @@ const calcAge2 = function (birthYear) {
 ### Arrow Functions
 
 Arrow functions are a concise way to define functions, especially when the function body is a single statement. For example:
-```
+```javascript
 const calcAge3 = birthYear => 2037 - birthYear;
 ```
 ### Function Calling Another Function
 
 Functions can call other functions to perform complex tasks. For example:
-```
+```javascript
 const cutPieces = function (fruit) {
     return fruit * 4;
 };
@@ -112,7 +112,7 @@ Arrays have several methods that can be used to manipulate them, such as:
 * `pop()`: removes the last element of the array
 
 For example:
-```
+```javascript
 const friends = ['Michael', 'Steven', 'Peter'];
 friends.push("jack"); // adds a new element to the end of the array
 friends.shift(); // removes the first element of the array
@@ -126,7 +126,7 @@ Objects are data structures that store data as key-value pairs, where each value
 ### Object Properties
 
 Objects have properties that can be accessed using dot notation or bracket notation. For example:
-```
+```javascript
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
