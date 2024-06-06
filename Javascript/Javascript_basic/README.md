@@ -16,7 +16,43 @@ Follow these steps to set up and run the project:
 - A web browser (e.g., Chrome, Firefox, Edge)
 - A code editor (e.g., VS Code, Sublime Text, Atom)
 
+### Instructions
+
+1. **Clone the Repository**
+
+
 ```bash
-   git clone https://github.com/your-username/javascript_basics.git
-   cd javascript_basics
+   git clone https://github.com/ManoharJunga/Road-map-to-become-MERN-Stack-developer/tree/main/Javascript/Javascript_basic.git
+   cd javascript_basic
+```
+
+2. Open the Project in Your Code Editor
+
+Open the cloned repository folder in your preferred code editor.
+
+3. Run the Project
+
+Open the index.html file in your web browser by either:
+
+Double-clicking the index.html file, or
+Opening the file from your code editor's terminal with a browser (e.g., open index.html on MacOS, start index.html on Windows).
+
+
+`index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+</head>
+<body>
+    <h1>Welcome to JavaScript Basics</h1>
+    <p>Open the console to see the JavaScript output.</p>
+</body>
+<script src="./script.js"></script>
+</html>
+
 ```
