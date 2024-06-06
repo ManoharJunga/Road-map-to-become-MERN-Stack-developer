@@ -117,3 +117,37 @@ console.log(jonas['last' + nameKey]);
 
 //Object Methods
 
+const jonasnew = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYeah: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function (birthYeah) {
+        return 2037 - birthYeah;
+    }
+};
+console.log(jonasnew.calcAge(1991));
+
+//Lopping Arrays
+
+const newfriends = ['Michael', 'Steven', 'Peter'];
+for (let i = 0; i < newfriends.length; i++) {
+    console.log(newfriends[i]);
+    console.log(typeof (newfriends[i]))
+}
+
+
+// Continue Example
+console.log('--- ONLY STRINGS ---');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] !== 'string') continue;
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] === 'number') break;
+    console.log(jonas[i], typeof jonas[i]);
+}

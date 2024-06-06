@@ -138,4 +138,72 @@ const jonas = {
 console.log(jonas.lastName); // prints the last name
 console.log(jonas['lastName']); // prints the last name
 ```
-This repository provides a basic understanding of JavaScript functions and data structures, including arrays and objects. It covers function declarations, function expressions, arrow functions, and function calling another function, as well as array methods and object properties.
+**Introduction to Objects and Arrays**
+
+**Objects**
+
+Objects are data structures that store data as key-value pairs, where each value is associated with a unique key (property name). They are defined using curly braces `{}`.
+
+### Object Properties
+
+Objects have properties that can be accessed using dot notation or bracket notation. For example:
+```javascript
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+
+console.log(jonas.lastName); // prints the last name
+console.log(jonas['lastName']); // prints the last name
+```
+### Object Methods
+
+Objects can also have methods, which are functions that are associated with an object. For example:
+```javascript
+const jonasnew = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYeah: 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge: function (birthYeah) {
+        return 2037 - birthYeah;
+    }
+};
+console.log(jonasnew.calcAge(1991));
+```
+**Arrays**
+
+Arrays are data structures that store a collection of elements that are ordered and indexed by numbers (starting from 0). They are defined using square brackets `[]`.
+
+### Looping Arrays
+
+Arrays can be looped through using a `for` loop. For example:
+```javascript
+const newfriends = ['Michael', 'Steven', 'Peter'];
+for (let i = 0; i < newfriends.length; i++) {
+    console.log(newfriends[i]);
+    console.log(typeof (newfriends[i]))
+}
+```
+### Continue and Break Statements
+
+The `continue` statement can be used to skip over certain iterations in a loop, while the `break` statement can be used to exit the loop entirely. For example:
+```javascript
+console.log('--- ONLY STRINGS ---');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i]!== 'tring') continue;
+    console.log(jonas[i], typeof jonas[i]);
+}
+
+console.log('--- BREAK WITH NUMBER ---');
+for (let i = 0; i < jonas.length; i++) {
+    if (typeof jonas[i] === 'number') break;
+    console.log(jonas[i], typeof jonas[i]);
+}
+```
+This section provides a basic understanding of objects and arrays in JavaScript, including how to define and access their properties, as well as how to loop through arrays and use `continue` and `break` statements.
