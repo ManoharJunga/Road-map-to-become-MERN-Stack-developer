@@ -7,3 +7,7 @@
 - [Connect backend with frontend](Connections/README.md)
 - [Complete Login and Signup](Login_Signup_MERN/README.md)
 - [Data Modelling for backend with mongoose](Data_Modelling/README.md)
+
+
+# JavaScript
+- [What to learn about JavaScript](JavaScript/README.md)
