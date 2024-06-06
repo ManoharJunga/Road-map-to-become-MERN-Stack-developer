@@ -56,6 +56,7 @@ Opening the file from your code editor's terminal with a browser (e.g., open ind
 </html>
 
 ```
+`script.js`
 
 ```js
 // This is your first JavaScript file!
