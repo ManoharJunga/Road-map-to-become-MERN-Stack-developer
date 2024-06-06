@@ -56,11 +56,4 @@ Opening the file from your code editor's terminal with a browser (e.g., open ind
 </html>
 
 ```
-`script.js`
-
-```js
-// This is your first JavaScript file!
-// You can write JavaScript code here and see the output in the browser console.
-
-console.log('Hello, World!');
-```
+# Now Step by Step I will be explaining how these. got to the javascript file and see one by one command how it works.
