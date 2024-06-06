@@ -98,7 +98,7 @@ console.log(c + x + y);    // '561020'
 - `c + x + y`: Concatenates the string `'56'` with the string representations of `x` and `y`, resulting in the string `'561020'`.
 
 
-## Comparison Operators:
+### Comparison Operators:
 ### Equality Operator (==):
 
 ```javascript
@@ -167,3 +167,88 @@ year = 1919; // Number
 console.log(typeof year); // "number"
 ```
 JavaScript supports various data types including boolean, string, number, and undefined.
+
+### For Loop Example
+
+```javascript
+let text = "";
+for (let i = 1; i <= 10; i++) {
+    text += i + " ";
+}
+console.log(text);
+
+```
+This loop concatenates numbers from 1 to 10 into a string and logs it.
+
+### Switch Statement Example
+
+```javascript
+let i = prompt("Enter any number 1 2 3");
+let number = Number(i);
+switch (number) {
+    case 1: alert('1'); break;
+    case 2: alert('2'); break;
+    case 3: alert('3'); break;
+    default: alert('default'); break;
+}
+
+
+```
+
+This switch statement alerts the user based on the number input.
+
+### Variable Declarations: let, const, var
+
+```javascript
+let age = 30;
+age = 31;
+
+const birthYear = 2003;
+// birthYear = 2002; // This will cause an error
+
+var job = 'programmer';
+job = 'teacher';
+
+let lastName1 = "manohar";
+console.log(lastName1);
+
+```
+
+- `let`: Declares a block-scoped variable that can be reassigned.
+- `const`: Declares a block-scoped variable that cannot be reassigned.
+- `var`: Declares a function-scoped or globally-scoped variable.
+
+
+### Basic Operators
+
+```javascript
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+console.log(ageJonas, ageSarah);
+console.log(ageJonas * 2, ageJonas / 10, 2 ** 3); // 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+
+const firstName = 'Jonas';
+const lastName = 'Schmedtmann';
+console.log(firstName + lastName);
+
+let x1 = 10 + 5; // 15
+x1 += 10; // x = x + 10 = 25
+x1 *= 4; // x = x * 4 = 100
+x1++; // x = x + 1 = 101
+x1--; // x = x - 1 = 100
+x1--; // x = x - 1 = 99
+console.log(x1);
+
+```
+- Basic arithmetic and assignment operators.
+- String concatenation with the `+` operator.
+
+### Comparison Operators
+
+```javascript
+console.log(ageJonas > ageSarah);
+console.log(ageJonas >= 18);
+```
+
+- `>` and `>=`: Greater than and greater than or equal to operators.

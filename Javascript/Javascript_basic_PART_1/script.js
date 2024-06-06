@@ -84,6 +84,8 @@ console.log(typeof year)
 year = 1919
 console.log(typeof year)
 
+
+
 let text = " "
 for(let i=1;i<=10;i++){
     text+=i+" ";
@@ -99,4 +101,39 @@ console.log(text)
 //     default: alert('default');break;
 // }
 
+//let, const , var 
+let age = 30;
+age = 31
+
+const birthYear = 2003
+//birthYear = 2002
+
+var job = 'programmer';
+job = 'teacher';
+
+let lastName1 = "manohar"
+console.log(lastName1)
+
+//basic operator
+
+const now = 2037;
+const ageJonas = now - 1991;
+const ageSarah = now - 2018;
+console.log (ageJonas, ageSarah);
+console.log (ageJonas * 2, ageJonas / 10, 2 ** 3) ;
+// 2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+const firstName = 'Jonas';
+const lastName = 'Schmedtmann';
+console.log(firstName+lastName) ;
+let x1 = 10 + 5; // 15
+x1 += 10; // x = x + 10 = 25
+x1 *= 4; // x = x * 4 = 100
+x1++; // x = x + 1 = 101
+x1--; // x = x - 1 = 100
+x1--; // x = x - 1 = 99
+console.log (x);
+
+//comparison operators
+console.log(ageJonas>ageSarah);
+console.log(ageJonas>=18);
 
