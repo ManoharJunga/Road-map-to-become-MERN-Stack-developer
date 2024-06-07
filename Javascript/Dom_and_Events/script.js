@@ -52,11 +52,32 @@ console.log(allcontainer);  // Logs a NodeList of all 'div' elements found in th
 // }
 // console.log(listItems);
 
+// const firstlist = document.querySelector(".list-items");
+
+// console.log(firstlist.innerHTML);
+// console.log(firstlist.textContent);
+// console.log(firstlist.innerText);
+
+
 // Creating Elements 
 
-const ul = document.querySelectorAll('ul');
+const ul = document.querySelector('ul');
 const li = document.createElement('li');
 
 //Adding Elements
 
 ul.append(li);
+
+//Modifying the test
+
+// li.innerText = "Testing"
+
+//Modifying Attributes & Classes
+
+// li.setAttribute('id', 'main-heading');
+// li.removeAttribute('id');
+// li.classList.add('list-items')
+
+// const title = document.querySelector('#main-heading');
+
+// console.log(title.getAttribute("id"));
