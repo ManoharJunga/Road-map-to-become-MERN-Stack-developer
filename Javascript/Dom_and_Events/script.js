@@ -1,62 +1,62 @@
-'use strict';
-
-// Selecting and Manipulating Events
-
-// console.log(document.querySelector('.message').textContent);
-// document.querySelector('.message').textContent = 'Correct Number';
-// console.log(document.querySelector('.message').textContent);
+// DOM Manipulation
 
 
-// document.querySelector('.number').textContent = 13;
-// document.querySelector('.score').textContent = 40;
-// document.querySelector('.guess').value = 100;
+{/*
+// GetElementById()
+// This method selects an HTML element based on its unique ID attribute.
+// It returns the first element with the specified ID.
+const title = document.getElementById('main-heading');
+console.log(title);  // Logs the element with id 'main-heading' to the console.
 
-// Handling Click Events
+// GetElementsByClassName()
+// This method selects all HTML elements that have the specified class name.
+// It returns an HTMLCollection (which is similar to an array but not exactly an array).
+const listItems = document.getElementsByClassName('list-items');
+console.log(listItems);  // Logs a collection of elements with the class 'list-items'.
 
-// document.querySelector('.check').addEventListener('click', function() {
-//     const guess = Number(document.querySelector('.guess').value);
-//     console.log(guess);
-//     if(!guess){
-//         document.querySelector('.message').textContent = 'No Number';
-//     }
-// });
+// GetElementsByTagName()
+// This method selects all HTML elements with the specified tag name.
+// It returns an HTMLCollection.
+const tagname = document.getElementsByTagName('li');
+console.log(tagname);  // Logs a collection of 'li' (list item) elements.
 
-// Implementing a game logic
+// querySelector()
+// This method returns the first element that matches the specified CSS selector.
+// If no matches are found, it returns null.
+const container = document.querySelector('div');
+console.log(container);  // Logs the first 'div' element found in the document.
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
+// querySelectorAll()
+// This method returns all elements that match the specified CSS selector.
+// It returns a NodeList, which is similar to an array and can be iterated over.
+const allcontainer = document.querySelectorAll('div');
+console.log(allcontainer);  // Logs a NodeList of all 'div' elements found in the document.
 
-// document.querySelector('.check').addEventListener('click', function () {
-//     const guess = Number(document.querySelector('.guess').value);
-//     console.log(guess);
-//     if (!guess) {
-//         document.querySelector('.message').textContent = 'No Number';
-//     } else if (guess < secretNumber) {
-//         if (score > 1) {
-//             document.querySelector('.message').textContent = 'Too Low';
-//             score--;
-//             document.querySelector('.score').textContent = score
-//         } else {
-//             document.querySelector('.message').textContent = 'You lost the game';
-//             document.querySelector('.score').textContent = 0;
-//             document.querySelector('body').style.backgroundColor = 'red';
-//         }
-//     } else if (guess > secretNumber) {
-//         if (score > 1) {
-//             document.querySelector('.message').textContent = 'Too high';
-//             score--;
-//             document.querySelector('.score').textContent = score;
-            
-//         } else {
-//             document.querySelector('.message').textContent = 'You lost the game';
-//             document.querySelector('.score').textContent = 0;
-//             document.querySelector('body').style.backgroundColor = 'red';
-//         }
-//     } else {
-//         document.querySelector('.message').textContent = 'Correct Number';
-//         document.querySelector('body').style.backgroundColor = 'green';
-//         document.querySelector('.number').textContent = secretNumber;
 
-//     }
-// });
+*/}
 
+
+// Styling An Element with a color
+
+// const title = document.querySelector('#main-heading');
+// title.style.color =  'red';
+// console.log(title);
+
+// Styling font size
+
+// const listItems = document.querySelectorAll('.list-items');
+
+
+// for(let i = 0; i < listItems.length; i++){
+//     listItems[i].style.fontSize = '100px';
+// }
+// console.log(listItems);
+
+// Creating Elements 
+
+const ul = document.querySelectorAll('ul');
+const li = document.createElement('li');
+
+//Adding Elements
+
+ul.append(li);
