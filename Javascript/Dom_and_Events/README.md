@@ -48,3 +48,130 @@ The DOM tree structure for the above HTML document can be visualized as follows:
     - `div`: The `<div>` element, representing a division or section.
     - `a`: The `<a>` element, representing a hyperlink.
 
+Here is the rewritten text in a clean and organized format:
+
+**DOM Manipulation**
+
+### Selecting Elements
+
+* `getElementById()`: Selects an HTML element based on its unique ID attribute. Returns the first element with the specified ID.
+```javascript
+const title = document.getElementById('main-heading');
+console.log(title);  // Logs the element with id 'main-heading'
+```
+* `getElementsByClassName()`: Selects all HTML elements that have the specified class name. Returns an HTMLCollection.
+```javascript
+const listItems = document.getElementsByClassName('list-items');
+console.log(listItems);  // Logs a collection of elements with the class 'list-items'
+```
+* `getElementsByTagName()`: Selects all HTML elements with the specified tag name. Returns an HTMLCollection.
+```javascript
+const tagname = document.getElementsByTagName('li');
+console.log(tagname);  // Logs a collection of 'li' (list item) elements
+```
+* `querySelector()`: Returns the first element that matches the specified CSS selector. If no matches are found, returns null.
+```javascript
+const container = document.querySelector('div');
+console.log(container);  // Logs the first 'div' element found in the document
+```
+* `querySelectorAll()`: Returns all elements that match the specified CSS selector. Returns a NodeList.
+```javascript
+const allcontainer = document.querySelectorAll('div');
+console.log(allcontainer);  // Logs a NodeList of all 'div' elements found in the document
+```
+
+### Styling Elements
+
+* Styling an Element with a Color
+```javascript
+const title = document.querySelector('#main-heading');
+title.style.color = 'red';
+console.log(title);
+```
+* Styling Font Size
+```javascript
+const listItems = document.querySelectorAll('.list-items');
+
+for(let i = 0; i < listItems.length; i++){
+    listItems[i].style.fontSize = '100px';
+}
+console.log(listItems);
+```
+
+### InnerHTML, TextContent, and InnerText
+
+* `innerHTML`: Logs HTML content
+* `textContent`: Logs text content
+* `innerText`: Logs text content (excluding hidden text)
+```javascript
+const firstlist = document.querySelector(".list-items");
+
+console.log(firstlist.innerHTML);  
+console.log(firstlist.textContent);  
+console.log(firstlist.innerText);  
+```
+
+### Creating and Modifying Elements
+
+* Creating Elements
+```javascript
+const ul = document.querySelector('ul');
+const li = document.createElement('li');
+```
+* Adding Elements
+```javascript
+ul.append(li);
+```
+* Modifying the Text
+```javascript
+li.innerText = "Testing";
+```
+* Modifying Attributes & Classes
+```javascript
+li.setAttribute('id', 'main-heading');
+li.removeAttribute('id');
+li.classList.add('list-items');
+
+const title = document.querySelector('#main-heading');
+console.log(title.getAttribute("id"));
+```
+
+### Traversing the DOM
+
+* Parent Node Traversal
+```javascript
+let ul = document.querySelector('ul');
+
+console.log(ul.parentNode.parentNode);
+console.log(ul.parentElement.parentElement);
+
+const html = document.documentElement;
+
+console.log(html.parentNode);
+console.log(html.parentElement);
+```
+* Child Node Traversal
+```javascript
+let ul = document.querySelector('ul');
+
+console.log(ul.childNodes);
+console.log(ul.firstChild);
+console.log(ul.lastChild);
+
+ul.childNodes[1].style.color = 'blue';
+
+console.log(ul.children);
+console.log(ul.firstElementChild);
+console.log(ul.lastElementChild);
+```
+* Sibling Node Traversal
+```javascript
+let ul = document.querySelector('ul');
+const div = document.querySelector('div');
+
+console.log(div.childNodes);
+console.log(ul.previousSibling);
+console.log(ul.nextSibling);
+console.log(ul.previousElementSibling);
+console.log(ul.nextElementSibling);
+```
