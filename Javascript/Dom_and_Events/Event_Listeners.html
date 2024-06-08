@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .boxes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .boxes:hover {
+            transform: translateY(-5px);
+            background-color: #f0f0f0;
+        }
+        .box-1 {
+            border: 2px solid #ff6b6b;
+        }
+        .box-2 {
+            border: 2px solid #6b83ff;
+        }
+        .box-3 {
+            border: 2px solid #6bff83;
+        }
+        .boxes h1 {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .boxes button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #ff6b6b;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+        .boxes button:hover {
+            background-color: #ff4c4c;
+        }
+        .reveal-btn {
+            margin-top: 20px;
+            background-color: #6b83ff;
+        }
+        .reveal-btn:hover {
+            background-color: #4c6bff;
+        }
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .hidden-content.reveal {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-heading">Event Listeners</h1>
+
+    <div class="container">
+        <div class="boxes box-1">
+            <h1 class="heading">Example 1</h1>
+            <button onclick="alert('Entered 1')">Enter</button>
+        </div>
+
+        <div class="boxes box-2">
+            <h1 class="heading">Example 2</h1>
+            <button class="btn-2">Enter</button>
+        </div>
+
+        <div class="boxes box-3">
+            <h1 class="heading">Example 3</h1>
+            <button class="btn-3">Enter</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <button class="reveal-btn">Reveal More</button>
+        <div class="hidden-content boxes">
+            Hello, nice to meet you!
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -125,3 +125,94 @@ console.log(allcontainer);  // Logs a NodeList of all 'div' elements found in th
 // console.log(ul.nextSibling);
 // console.log(ul.previousElementSibling);
 // console.log(ul.nextElementSibling);
+
+
+
+// Event Listeners
+
+// element.addEventListener('click', function);
+
+// const buttonTwo = document.querySelector('.btn-2');
+
+// function alertbtn() {
+//     alert('Example two entered');
+// }
+
+// buttonTwo.addEventListener('click', alertbtn);
+
+
+// Mouseover
+
+// const newBackgroundColor = document.querySelector('.box-3');
+
+// function changeBgColor() {
+//     newBackgroundColor.style.backgroundColor = 'red';
+// }
+
+// newBackgroundColor.addEventListener('mouseover', changeBgColor);
+
+// const revealbtn = document.querySelector('.reveal-btn');
+// const hiddenContent = document.querySelector('.hidden-content');
+
+// function revealText() {
+//     if (hiddenContent.classList.contains('reveal')) {
+//         hiddenContent.classList.remove('reveal');
+//     } else {
+//         hiddenContent.classList.add('reveal');
+//     }
+// }  
+
+// revealbtn.addEventListener('click', revealText);
+
+
+//Event Probagation
+
+//3 Phases
+// 1.Event Capturing
+// 2.Target
+// 3.Event Bubbling
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const outerDiv = document.querySelector('.outer');
+//     const middleDiv = document.querySelector('.middle');
+//     const innerDiv = document.querySelector('.inner');
+
+//     // Event capturing
+//     outerDiv.addEventListener('click', () => {
+//         console.log('Outer Div (Capturing)');
+//     }, true);
+
+//     middleDiv.addEventListener('click', () => {
+//         console.log('Middle Div (Capturing)');
+//     }, true);
+
+//     innerDiv.addEventListener('click', (event) => {
+//         console.log('Inner Div (Capturing)');
+//         event.stopPropagation(); // Stops propagation
+//     }, true);
+
+//     // Event bubbling
+//     outerDiv.addEventListener('click', () => {
+//         console.log('Outer Div (Bubbling)');
+//     });
+
+//     middleDiv.addEventListener('click', () => {
+//         console.log('Middle Div (Bubbling)');
+//     });
+
+//     innerDiv.addEventListener('click', (event) => {
+//         console.log('Inner Div (Bubbling)');
+//         event.stopPropagation(); // Stops propagation
+//     });
+// });
+
+
+// Event Delegation
+
+// It allows users to append a SINGLE event listener to a parent element that adds it all of its present AND future descendants that match a selector.
+
+
+
+
+

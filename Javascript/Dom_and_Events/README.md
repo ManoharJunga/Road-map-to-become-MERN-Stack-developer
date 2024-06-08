@@ -175,3 +175,82 @@ console.log(ul.nextSibling);
 console.log(ul.previousElementSibling);
 console.log(ul.nextElementSibling);
 ```
+
+**Mouseover Event**
+
+You can change the background color of an element when the mouse hovers over it using the `mouseover` event.
+
+```javascript
+const newBackgroundColor = document.querySelector('.box-3');
+
+function changeBgColor() {
+    newBackgroundColor.style.backgroundColor = 'ed';
+}
+
+newBackgroundColor.addEventListener('mouseover', changeBgColor);
+```
+
+**Toggling Hidden Content**
+
+Toggle the visibility of an element by adding or removing a CSS class when a button is clicked.
+
+```javascript
+const revealbtn = document.querySelector('.reveal-btn');
+const hiddenContent = document.querySelector('.hidden-content');
+
+function revealText() {
+    if (hiddenContent.classList.contains('reveal')) {
+        hiddenContent.classList.remove('reveal');
+    } else {
+        hiddenContent.classList.add('reveal');
+    }
+}  
+
+revealbtn.addEventListener('click', revealText);
+```
+
+**Event Propagation**
+
+Event propagation refers to the order in which events are handled in the DOM. There are three phases:
+
+1. **Event Capturing**: The event starts from the root and goes down to the target element.
+2. **Target**: The event reaches the target element.
+3. **Event Bubbling**: The event bubbles up from the target element to the root.
+
+**Example Code**
+
+```javascript
+document.addEventListener('DOMContentLoaded', function () {
+    const outerDiv = document.querySelector('.outer');
+    const middleDiv = document.querySelector('.middle');
+    const innerDiv = document.querySelector('.inner');
+
+    // Event Capturing
+    outerDiv.addEventListener('click', () => {
+        console.log('Outer Div (Capturing)');
+    }, true);
+
+    middleDiv.addEventListener('click', () => {
+        console.log('Middle Div (Capturing)');
+    }, true);
+
+    innerDiv.addEventListener('click', (event) => {
+        console.log('Inner Div (Capturing)');
+        event.stopPropagation(); // Stops propagation
+    }, true);
+
+    // Event Bubbling
+    outerDiv.addEventListener('click', () => {
+        console.log('Outer Div (Bubbling)');
+    });
+
+    middleDiv.addEventListener('click', () => {
+        console.log('Middle Div (Bubbling)');
+    });
+
+    innerDiv.addEventListener('click', (event) => {
+        console.log('Inner Div (Bubbling)');
+        event.stopPropagation(); // Stops propagation
+    });
+});
+```

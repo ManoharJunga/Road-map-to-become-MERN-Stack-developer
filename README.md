@@ -10,4 +10,4 @@
 
 
 # JavaScript
-- [What to learn about JavaScript](JavaScript/README.md)
+- [What to learn about JavaScript](Javascript/README.md)
