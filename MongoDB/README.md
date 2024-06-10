@@ -371,11 +371,10 @@ db.collection.find({ age: { $not: { $eq: 25 } } })
 
 Note: These examples assume a collection with documents containing `age` and `country` fields. The actual field names and values may vary depending on your specific use case.
 
-## Element Operator
+### Element Operator
 
 the element query operators are used to locate document based on the fields of the document.
 
-### MongoDB Existence and Type Operators
 
 | **Operator** | **Description** |
 | --- | --- |
