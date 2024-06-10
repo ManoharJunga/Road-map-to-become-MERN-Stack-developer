@@ -100,3 +100,5 @@ NON RELATIONAL DATABASE IS A COLLECTION OF UNSTRUTURED AND SEMI STRUCTURED ITEMS
 - Key value pair
 - Column based
 - Graph Oriented
+
+<img src="./NOSQL_WORK.png" alt="No SQL">
