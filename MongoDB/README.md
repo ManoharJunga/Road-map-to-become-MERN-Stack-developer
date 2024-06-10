@@ -539,3 +539,7 @@ Here is a table summarizing the regex options in MongoDB:
 | `m` | Multi-line match |
 | `s` | Dot character matches all characters, including newlines |
 | `x` | Ignore whitespace characters |
+
+# What is MongoDB Projection?
+
+MongoDB Projection is a unique feature that allows you to select only the necessary data rather than the entire set of data from the document.
