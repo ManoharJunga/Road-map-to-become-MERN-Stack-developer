@@ -118,8 +118,9 @@ NON RELATIONAL DATABASE IS A COLLECTION OF UNSTRUTURED AND SEMI STRUCTURED ITEMS
     },
     "hobbies": ["surfing", "coding"]
 }
-// DOCUMENT IN MONGODB
 ```
+
+## Difference between Sql and Nosql
 
 | **Characteristics** | **SQL (MySQL)** | **NoSQL** |
 | --- | --- | --- |
@@ -131,3 +132,18 @@ NON RELATIONAL DATABASE IS A COLLECTION OF UNSTRUTURED AND SEMI STRUCTURED ITEMS
 | **Flexibility** | Rigid schema, less flexible | Flexible schema, highly adaptable |
 | **Data Modeling** | Supports complex relationships, ACID properties | Supports flexible data models, eventual consistency |
 | **Use Cases** | Suitable for structured data, complex queries | Suitable for unstructured data, big data, real-time web apps |
+
+
+## ADVANTAGES & DISADVANTAGES OF USING NOSQL
+
+### ADVANTAGES
+
+- HIGH PERFORMANCE AND SCALABILITY
+- AVAILABILITY AND FLEXIBILITY
+- OPEN SOURCE AND SCHEMA LESS
+
+### DISADVANCES
+
+- LACK OF STANDARDIZATION
+- CONSISTENCY ISSUES
+- LIMITED QUERY CAPABILITIES
