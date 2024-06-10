@@ -397,3 +397,145 @@ db.employees.find({ "empAge": { Sexists: true, $gte: 35}})
 ```bash
 db.employees.find({ "empAge": { $type: "double"}})
 ```
+### Array Operators
+
+| **Operator** | **Description** |
+| --- | --- |
+| `$all` | Matches arrays that contain all elements specified in the query. |
+| `$elemMatch` | Selects documents if element in the array field matches all the specified $elemMatch conditions. |
+| `$size` | Matches arrays with the specified number of elements. |
+
+Note: These examples assume a collection named `order` with documents containing an `OrderItems` array field. The actual field names and values may vary depending on your specific use case.
+
+### `$all` Operator
+
+**Query:** Find all orders that contain both "notebook" and "paper" in the `OrderItems` array.
+```bash
+db.order.find({ "OrderItems.ItemName": { $all: ["notebook", "paper"] } })
+```
+**Result:** Returns the order with `_id` "1477488388843" because it contains both "notebook" and "paper" in the `OrderItems` array.
+
+### `$size` Operator
+
+**Query:** Find all orders that have exactly 4 items in the `OrderItems` array.
+```bash
+db.order.find({ "OrderItems": { $size: 4 } })
+```
+**Result:** Returns no orders because none of the orders have exactly 4 items in the `OrderItems` array.
+
+### `$elemMatch` Operator
+
+**Query:** Find all orders that have an item with `ItemName` "postcard" and `Price` "10.00" in the `OrderItems` array.
+```bash
+db.order.find({ "OrderItems": { $elemMatch: { ItemName: "postcard", Price: "10.00" } } })
+```
+**Result:** Returns the orders with `_id` "146588300039" and "1477488388843" because they both have an item with `ItemName` "postcard" and `Price` "10.00" in the `OrderItems` array.
+
+
+### Update Operators
+
+MongoDB offers a variety of field updats operators to update the values of the fields of documents matching the specified condition.
+
+| **Operator** | **Description** |
+| --- | --- |
+| `$currentDate` | Sets the value of a field to the current date, either as a Date or a Timestamp. |
+| `$inc` | Increments the value of a field by the specified amount. |
+| `$min` | Updates the field if the specified value is less than the existing field value. |
+| `$max` | Updates the field if the specified value is greater than the existing field value. |
+| `$mul` | Multiplies the value of a field by the specified amount. |
+
+Here are some examples for each of the operators:
+
+### `$currentDate` Operator
+
+**Query:** Update the `lastUpdated` field to the current date for all documents in the `orders` collection.
+```bash
+db.orders.updateMany({}, { $currentDate: { lastUpdated: true } })
+```
+**Result:** Sets the `lastUpdated` field to the current date for all documents in the `orders` collection.
+
+### `$inc` Operator
+
+**Query:** Increment the `quantity` field by 2 for all documents in the `orders` collection.
+```bash
+db.orders.updateMany({}, { $inc: { quantity: 2 } })
+```
+**Result:** Increments the `quantity` field by 2 for all documents in the `orders` collection.
+
+### `$min` Operator
+
+**Query:** Update the `price` field to 10 if it is greater than 10 for all documents in the `orders` collection.
+```bash
+db.orders.updateMany({}, { $min: { price: 10 } })
+```
+**Result:** Updates the `price` field to 10 if it is greater than 10 for all documents in the `orders` collection.
+
+### `$max` Operator
+
+**Query:** Update the `price` field to 20 if it is less than 20 for all documents in the `orders` collection.
+```bash
+db.orders.updateMany({}, { $max: { price: 20 } })
+```
+**Result:** Updates the `price` field to 20 if it is less than 20 for all documents in the `orders` collection.
+
+### `$mul` Operator
+
+**Query:** Multiply the `price` field by 2 for all documents in the `orders` collection.
+```bash
+db.orders.updateMany({}, { $mul: { price: 2 } })
+```
+
+## What are Regular Expressions in MongoDB?
+
+Regular Expressions are used to match patterns in a Document.
+
+
+- Provides patterns or a sequence of characters for matching text and define search pattern.
+- Retrieving an unidentified field in a document easily
+- Query databases to find a smaller subset of data within a Collection
+
+## What is $Regex operator?
+
+$Regex operator provides regular expression capabilities for pattern matching strings in the queries
+
+SYNTAX
+• db.collection_name.find{ <field>:{ $regex: /pattern/ }}
+• { <field>: { $regex: "pattern$", 1}}
+• { <field>: { $regex: /pattern/, $options:'s/x/i/m'33}}
+
+## How Regex Works in MongoDB
+
+In MongoDB, regex (regular expression) is used to match patterns in strings. The `$regex` operator is used to specify a regex pattern to match against a string field.
+
+Here is an example of how to use regex in MongoDB:
+```bash
+db.products.find( { sku: { $regex: /789$/ } } )
+```
+This query matches all documents where the `sku` field ends with `789`.
+
+You can also use options with the `$regex` operator to modify the behavior of the regex match. For example, the `i` option makes the match case-insensitive:
+```bash
+db.products.find( { sku: { $regex: /^ABC/i } } )
+```
+This query matches all documents where the `sku` field starts with `ABC`, regardless of case.
+
+Another option is the `m` option, which allows the regex pattern to match multiple lines:
+```bash
+db.products.find( { description: { $regex: /^S/, $options: '' } } )
+```
+This query matches all documents where the `description` field starts with `S`, even if it is a multi-line string.
+
+You can also use the `s` option to allow the dot character (`.`) to match all characters, including newlines:
+```bash
+db.products.find( { description: { $regex: /m.*line/, $options: 'i' } } )
+```
+This query matches all documents where the `description` field contains the string `m` followed by any characters (including newlines) and then the string `line`.
+
+Here is a table summarizing the regex options in MongoDB:
+
+| Option | Description |
+| --- | --- |
+| `i` | Case-insensitive match |
+| `m` | Multi-line match |
+| `s` | Dot character matches all characters, including newlines |
+| `x` | Ignore whitespace characters |
