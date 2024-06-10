@@ -102,3 +102,32 @@ NON RELATIONAL DATABASE IS A COLLECTION OF UNSTRUTURED AND SEMI STRUCTURED ITEMS
 - Graph Oriented
 
 <img src="./NOSQL_WORK.png" alt="No SQL">
+
+## HOW NOSQL WORKS?
+
+```json
+{
+    "_id": "5cf0029caff5056591b0ce7d",
+    "firstname": "Jane",
+    "lastname": "Wu",
+    "address": {
+    "street": "1 Circle Rd",
+    "city": "Los Angeles",
+    "state": "CA",
+    "zip": "90404"
+    },
+    "hobbies": ["surfing", "coding"]
+}
+// DOCUMENT IN MONGODB
+```
+
+| **Characteristics** | **SQL (MySQL)** | **NoSQL** |
+| --- | --- | --- |
+| **Data Structure** | Structured, tables with fixed schema | Unstructured, flexible schema |
+| **Data Storage** | Tables with rows and columns | Key-value, documents, graphs, or column families |
+| **Scalability** | Vertical scaling, limited scalability | Horizontal scaling, high scalability |
+| **Performance** | Good for complex queries, slower for large datasets | Good for large datasets, faster for simple queries |
+| **Querying** | Uses SQL, supports complex queries | Uses various query languages, supports simple queries |
+| **Flexibility** | Rigid schema, less flexible | Flexible schema, highly adaptable |
+| **Data Modeling** | Supports complex relationships, ACID properties | Supports flexible data models, eventual consistency |
+| **Use Cases** | Suitable for structured data, complex queries | Suitable for unstructured data, big data, real-time web apps |
