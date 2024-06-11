@@ -542,4 +542,83 @@ Here is a table summarizing the regex options in MongoDB:
 
 # What is MongoDB Projection?
 
-MongoDB Projection is a unique feature that allows you to select only the necessary data rather than the entire set of data from the document.
+MongoDB Projection is a unique feature that allows you to select only the necessary data rather than the entire set of data from the document. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## MongoDB atlas and shell commands
+
+Here's a breakdown of each command:
+
+**1. `use movies`**
+
+This command switches the MongoDB shell to the "movies" database. If the database doesn't exist, MongoDB will create it when you first store data in it.
+
+**2. `db.films.insertOne({ title: "Inception", director: "Christopher Nolan", year: 2010 })`**
+
+This command inserts a new document into the "films" collection in the "movies" database. The document has three fields:
+
+* `title`: "Inception"
+* `director`: "Christopher Nolan"
+* `year`: 2010
+
+The `insertOne` method is used to insert a single document into the collection.
+
+**3. `db.films.insertOne({ title: "The Shawshank Redemption", director: "Frank Darabont", year: 1994 })`**
+
+This command inserts another document into the "films" collection with the following fields:
+
+* `title`: "The Shawshank Redemption"
+* `director`: "Frank Darabont"
+* `year`: 1994
+
+**4. `db.films.insertOne({ title: "The Godfather", director: "Francis Ford Coppola", year: 1972 })`**
+
+This command inserts a third document into the "films" collection with the following fields:
+
+* `title`: "The Godfather"
+* `director`: "Francis Ford Coppola"
+* `year`: 1972
+
+**5. `db.films.find()`**
+
+This command retrieves all documents from the "films" collection and displays them in the MongoDB shell. The `find` method returns a cursor that points to the result set.
+
+**6. `db.films.find({ director: "Christopher Nolan" })`**
+
+This command retrieves all documents from the "films" collection where the `director` field is "Christopher Nolan". The `find` method returns a cursor that points to the result set.
+
+**7. `db.films.find({ year: { $gt: 2000 } })`**
+
+This command retrieves all documents from the "films" collection where the `year` field is greater than 2000. The `$gt` operator is used to specify the condition. The `find` method returns a cursor that points to the result set.
+
+**8. `db.films.updateOne({ title: "Inception" }, { $set: { title: "Inception 2" } })`**
+
+This command updates a single document in the "films" collection where the `title` field is "Inception". The update operation sets the `title` field to "Inception 2". The `updateOne` method is used to update a single document.
+
+**9. `db.films.deleteOne({ title: "The Shawshank Redemption" })`**
+
+This command deletes a single document from the "films" collection where the `title` field is "The Shawshank Redemption". The `deleteOne` method is used to delete a single document.
+
+**10. `show collections`**
+
+This command displays a list of all collections in the current database (in this case, the "movies" database).
+
+**11. `db.stats()`**
+
+This command displays statistics about the current database (in this case, the "movies" database). The statistics include information such as the database size, number of collections, and storage engine.
