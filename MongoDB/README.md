@@ -544,7 +544,27 @@ Here is a table summarizing the regex options in MongoDB:
 
 MongoDB Projection is a unique feature that allows you to select only the necessary data rather than the entire set of data from the document. 
 
+## MongoDB aggregation
 
+MongoDB's aggregation framework is a powerful tool for performing data aggregation operations, allowing you to process data records and return computed results. It uses a pipeline approach where documents pass through a sequence of stages that can filter, sort, group, reshape, and modify the documents.
+
+Here are some commonly used MongoDB aggregation commands and examples:
+
+$match: Filters the documents to pass only the ones that match the specified condition(s).
+
+$group: Groups input documents by a specified identifier expression and applies the accumulator expressions.
+
+$project: Reshapes each document in the stream, such as by adding new fields or removing existing fields.
+
+$sort: Sorts all input documents and returns them to the next stage in the pipeline in sorted order.
+
+$limit: Limits the number of documents passed to the next stage in the pipeline.
+
+$skip: Skips the first N documents, passing the rest to the next stage in the pipeline.
+
+$unwind: Deconstructs an array field from the input documents to output a document for each element.
+
+$lookup: Performs a left outer join to another collection in the same database to filter in documents from the “joined” collection for processing.
 
 
 

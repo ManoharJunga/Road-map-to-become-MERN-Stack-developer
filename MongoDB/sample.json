@@ -1,0 +1,13 @@
+[
+    {"id": 1, "name": "Ramu", "like": "banana", "score": 200}, 
+    {"id": 2, "name": "Syam", "like": "banana", "score": 250},
+    {"id": 3, "name": "sita", "like": "grape", "score": 100},
+    {"id": 4, "name": "sunitha", "like": "Mango", "score": 201},
+    {"id": 5, "name": "sumathi", "like": "banana", "score": 210},
+    {"id": 6, "name": "revathi", "like": "Mango", "score": 200},
+    {"id": 7, "name": "savitri", "like": "Organge", "score": 200},
+    {"id": 8, "name": "kavitha", "like": "kiwi", "score": 210},
+    {"id": 9, "name": "balu", "like": "kiwi", "score": 230},
+    {"id": 10, "name": "deepu", "like": "Organge", "score": 200}
+  ]
+  
