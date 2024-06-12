@@ -1,13 +1,23 @@
 const express = require("express");
-
+const dotenv = require("dotenv");
+const {MongoClient} = require("mongodb")
+dotenv.config()
 const app = express();
-const port = 3000;
+const PORT = 3003;
 
-app.get('/', (req, res) =>{
-  res.send('Hello World')
-  
+MongoClient.connect(process.env.MONGO_URL)
+.then(()=>{
+    console.log("Connected");
+})
+.catch((error)=>{
+    console.log("error", error);
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on http://localhost:${port}`);
-});
+app.get('/', (req, res) => {
+    res.send("Hello World");
+})
+
+
+app.listen(process.env.PORT||PORT,()=>{
+    console.log(`Example app listening on http://localhost:${PORT}`);
+})

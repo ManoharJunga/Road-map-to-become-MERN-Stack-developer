@@ -129,7 +129,7 @@ Node.js provides the `fs` (file system) module for working with the file system.
 **Synchronous Reading**
 
 The synchronous method of reading a file is `fs.readFileSync()`. Here's an example:
-```
+```js
 const fs = require("node:fs");
 const fileContents = fs.readFileSync("./file.txt", "utf-8");
 console.log(fileContents);
@@ -139,7 +139,7 @@ In this example, we first import the `fs` module using `const fs = require("node
 **Asynchronous Reading**
 
 The asynchronous method of reading a file is `fs.readFile()`. Here's an example:
-```
+```js
 fs.readFile('./file.txt',"utf-8" ,(error, data) => {
     if(error){
         console.log(error);
@@ -171,7 +171,7 @@ The HTTP module allows creation of web servers that can transfer data over
 **Example 1: Plain Text Response**
 
 This example creates an HTTP server that responds with a plain text message "Hello World!".
-```
+```js
 const http = require("http"); // not "node:http", just "http"
 
 const server = http.createServer((req, res) => {
@@ -192,7 +192,7 @@ Here's what's happening:
 **Example 2: JSON Response**
 
 This example creates an HTTP server that responds with a JSON object.
-```
+```js
 const http = require("http"); // not "node:http", just "http"
 
 const server = http.createServer((req, res) => {
@@ -218,7 +218,7 @@ Here's what's happening:
 **Example 3: HTML Response**
 
 This example creates an HTTP server that responds with an HTML file.
-```
+```js
 const http = require("http"); // not "node:http", just "http"
 const fs = require("fs"); // not "node:fs", just "fs"
 
