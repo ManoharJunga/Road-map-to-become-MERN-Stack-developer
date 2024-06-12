@@ -153,3 +153,88 @@ In this example, we call `fs.readFile()` with the file path `./file.txt`, the en
 In the body of the callback function, we first check if there is an error by checking if `error` is truthy. If there is an error, we log it to the console. If there is no error, we log the contents of the file to the console.
 
 Using the asynchronous method allows the program to continue executing while the file is being read, which can be more efficient for larger files or for programs that need to perform other tasks while the file is being read.
+
+## How the web works
+Computers connected to the internet are called clients and servers
+Clients are internet-connected devices such as computers or mobile phones along with web-accessing software available on those devices such as a web browser
+Servers on the other hand are computers that store web pages, sites, or apps
+
+## HTTP and Node
+We can create a web server using Node.js
+Node.js has access to operating system functionality like networking
+Node has an event loop to run tasks asynchronously and is perfect for creating web servers that can simultaneously handle large volumes of requests
+The node server we create should still respect the HTTP format
+The HTTP module allows creation of web servers that can transfer data over
+НТТР
+
+
+**Example 1: Plain Text Response**
+
+This example creates an HTTP server that responds with a plain text message "Hello World!".
+```
+const http = require("http"); // not "node:http", just "http"
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {"Content-Type": "text/plain"});
+    res.end("Hello World!");
+});
+server.listen(3001, () => {
+    console.log("server running on port 3001");
+})
+```
+Here's what's happening:
+
+* We create an HTTP server using `http.createServer()`.
+* The callback function is called for each incoming request.
+* We set the HTTP response code to 200 (OK) using `res.writeHead()`, and specify the `Content-Type` header as `text/plain` to indicate that the response body contains plain text.
+* We then end the response with `res.end()`, passing the string "Hello World!" as the response body.
+
+**Example 2: JSON Response**
+
+This example creates an HTTP server that responds with a JSON object.
+```
+const http = require("http"); // not "node:http", just "http"
+
+const server = http.createServer((req, res) => {
+    const superHero = {
+        firstName: "Bruce",
+        lastName: 'Wayne',
+    }
+    res.writeHead(200, {"Content-Type": "application/json"});
+    res.end(JSON.stringify(superHero));
+});
+server.listen(3001, () => {
+    console.log("server running on port 3001");
+})
+```
+Here's what's happening:
+
+* We create an HTTP server using `http.createServer()`.
+* The callback function is called for each incoming request.
+* We define a JSON object `superHero` with two properties: `firstName` and `lastName`.
+* We set the HTTP response code to 200 (OK) using `res.writeHead()`, and specify the `Content-Type` header as `application/json` to indicate that the response body contains JSON data.
+* We then end the response with `res.end()`, passing the JSON object as a string using `JSON.stringify()`.
+
+**Example 3: HTML Response**
+
+This example creates an HTTP server that responds with an HTML file.
+```
+const http = require("http"); // not "node:http", just "http"
+const fs = require("fs"); // not "node:fs", just "fs"
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, {"Content-Type": "text/html"});
+    const html = fs.readFileSync("./index.html", "utf-8");
+    res.end(html);
+});
+server.listen(3001, () => {
+    console.log("server running on port 3001");
+})
+```
+Here's what's happening:
+
+* We create an HTTP server using `http.createServer()`.
+* The callback function is called for each incoming request.
+* We set the HTTP response code to 200 (OK) using `res.writeHead()`, and specify the `Content-Type` header as `text/html` to indicate that the response body contains HTML data.
+* We read the contents of an HTML file `index.html` using `fs.readFileSync()` and store it in the `html` variable.
+* We then end the response with `res.end()`, passing the HTML content as a string.
