@@ -97,3 +97,59 @@ In `index.js`, we require the `add` function from `add.js` using `const add = re
 ## CommonJS
 - CommonJS is a standard that states how a module should be structured and shared
 - Node.js adopted CommonS when it started out and is what you will see in code bases
+
+## Module Wrapper
+
+-  module in node.js gets wrapped in an lIFE before being loaded
+ - IIFE helps keep top-level variables scoped to the module rather than the global object
+- The lIFE that wraps every module contains 5 parameters which are pretty important for the functioning of a module
+
+## Asynchronous JavaScript
+
+JavaScript is a synchronous, blocking, single-threaded language
+
+Synchronous
+If we have two functions which log messages to the console, code executes top down, with only one line executing at any given time
+
+```js
+function A() {
+console. log ('A' )
+}
+function B( ) {
+console. log ('B' )
+}
+A ( )
+B( )
+// -> Logs A and then B
+```
+
+**Reading a File in Node.js**
+Node.js provides the `fs` (file system) module for working with the file system. In this example, we'll demonstrate how to read a file using both synchronous and asynchronous methods.
+
+**Synchronous Reading**
+
+The synchronous method of reading a file is `fs.readFileSync()`. Here's an example:
+```
+const fs = require("node:fs");
+const fileContents = fs.readFileSync("./file.txt", "utf-8");
+console.log(fileContents);
+```
+In this example, we first import the `fs` module using `const fs = require("node:fs");`. We then call `fs.readFileSync()` with the file path `./file.txt` and the encoding `"utf-8"`. This method will block the execution of the program until the file is read, and then return the contents of the file as a string. We store the result in the `fileContents` variable and log it to the console.
+
+**Asynchronous Reading**
+
+The asynchronous method of reading a file is `fs.readFile()`. Here's an example:
+```
+fs.readFile('./file.txt',"utf-8" ,(error, data) => {
+    if(error){
+        console.log(error);
+    } else {
+        console.log(data);
+    }
+})
+```
+In this example, we call `fs.readFile()` with the file path `./file.txt`, the encoding `"utf-8"`, and a callback function. The callback function takes two arguments: `error` and `data`. If there is an error reading the file, it will be passed to the callback function in the `error` argument. If the file is read successfully, the contents of the file will be passed to the callback function in the `data` argument.
+
+In the body of the callback function, we first check if there is an error by checking if `error` is truthy. If there is an error, we log it to the console. If there is no error, we log the contents of the file to the console.
+
+Using the asynchronous method allows the program to continue executing while the file is being read, which can be more efficient for larger files or for programs that need to perform other tasks while the file is being read.
