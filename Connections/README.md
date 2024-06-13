@@ -131,7 +131,6 @@ export default defineConfig({
 
 ```
 
-
 5.To run the frontend, execute the following command:
 
 ```sh
