@@ -1,8 +1,5 @@
-Sure, here's a comprehensive step-by-step guide from installing dependencies to running your application. This can be included in your README file.
 
----
-
-# User Management Application
+# Data Fetching from MongoDB to frontend using backends API's
 
 This project is a full-stack application for managing user data. The backend is built with Express and MongoDB, and the frontend is built with React.
 
