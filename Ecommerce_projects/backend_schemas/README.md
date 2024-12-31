@@ -136,51 +136,35 @@ module.exports = mongoose.model('Customer', CustomerSchema);
 const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
-  name: { type: String, required: true },
+  name: { type: String, required: true, trim: true },
   description: { type: String, required: true },
-  category: { type: String, required: true }, // E.g., Electronics, Clothing, Furniture, etc.
-  brand: { type: String },
-  price: { type: Number, required: true }, // Base price
-  stock: { type: Number, required: true }, // Total stock across all sizes/variants
-  images: [{ type: String, required: true }], // Array of image URLs
-
-  sizes: [{
-    size: { type: String, required: true }, // E.g., Small, Medium, Large, or custom size name
-    height: { type: Number, required: true }, // Height in cm or other unit
-    width: { type: Number, required: true }, // Width in cm or other unit
-    stock: { type: Number, required: true }, // Stock for this specific size
-    additionalPrice: { type: Number, default: 0 }, // Price adjustment for this size
-  }],
-
+  price: { type: Number, required: true },
+  stock: { type: Number, required: true },
+  category: { type: String, required: true }, // e.g., Electronics, Furniture
+  sizes: [
+    {
+      height: { type: Number, required: true }, // in centimeters
+      width: { type: Number, required: true }, // in centimeters
+      weight: { type: Number, required: true }, // in kilograms
+    },
+  ],
   attributes: {
-    texture: { type: String }, // E.g., Matte, Glossy, Rough
-    finishing: { type: String }, // E.g., Polished, Raw, Painted
-    color: { type: String }, // Optional color information
-    material: { type: String }, // Material details, e.g., Wood, Metal, Plastic
-    weight: { type: String }, // E.g., 2kg, 5lbs
+    texture: { type: String, trim: true }, // e.g., Smooth, Rough
+    finish: { type: String, trim: true }, // e.g., Glossy, Matte
+    color: { type: String, trim: true }, // e.g., Red, Blue, Black
+    material: { type: String, trim: true }, // e.g., Wood, Metal
   },
-
-  ratings: {
-    average: { type: Number, default: 0 }, // Average rating
-    reviews: [{
-      userId: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer', required: true },
-      rating: { type: Number, required: true, min: 1, max: 5 },
-      comment: { type: String },
-      createdAt: { type: Date, default: Date.now },
-    }],
-  },
-
-  isFeatured: { type: Boolean, default: false }, // Highlight as a featured product
-  isDiscounted: { type: Boolean, default: false }, // Indicates if the product has a discount
-  discountPercentage: { type: Number, default: 0 }, // Discount percentage
-
+  images: [
+    { type: String, required: true }, // URLs of product images
+  ],
+  averageRating: { type: Number, default: 0 }, // Cached average rating
+  totalReviews: { type: Number, default: 0 }, // Total number of reviews
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
-}, {
-  timestamps: true,
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Product', ProductSchema);
+
 ```
 
 ---
@@ -208,20 +192,55 @@ module.exports = mongoose.model('Rating', RatingSchema);
 
 ---
 
-### 10. **Product Schema**
+### 10. **Rating Schema**
 
 ```javascript
 const mongoose = require('mongoose');
 
 const RatingSchema = new mongoose.Schema({
-  productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer', required: true },
-  rating: { type: Number, required: true, min: 1, max: 5 },
-  comment: { type: String },
+  customer: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer', required: true },
+  product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
+  rating: { type: Number, min: 1, max: 5, required: true }, // Rating between 1 and 5
+  review: { type: String, trim: true }, // Optional review comment
   createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
+  isFlagged: { type: Boolean, default: false }, // Flag if the review is inappropriate
+  helpfulCount: { type: Number, default: 0 }, // Count of helpful votes on the review
 }, {
-  timestamps: true,
+  timestamps: true, // Auto add createdAt and updatedAt
 });
+
+// Index for better performance in querying
+RatingSchema.index({ product: 1, customer: 1 });
+
+module.exports = mongoose.model('Rating', RatingSchema);
+
+
+```
+
+
+---
+
+### 11. **Rating Schema**
+
+```javascript
+const mongoose = require('mongoose');
+
+const RatingSchema = new mongoose.Schema({
+  customer: { type: mongoose.Schema.Types.ObjectId, ref: 'Customer', required: true },
+  product: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
+  rating: { type: Number, min: 1, max: 5, required: true }, // Rating between 1 and 5
+  review: { type: String, trim: true }, // Optional review comment
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
+  isFlagged: { type: Boolean, default: false }, // Flag if the review is inappropriate
+  helpfulCount: { type: Number, default: 0 }, // Count of helpful votes on the review
+}, {
+  timestamps: true, // Auto add createdAt and updatedAt
+});
+
+// Index for better performance in querying
+RatingSchema.index({ product: 1, customer: 1 });
 
 module.exports = mongoose.model('Rating', RatingSchema);
 
