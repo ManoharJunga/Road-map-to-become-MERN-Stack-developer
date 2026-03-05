@@ -10,3 +10,6 @@
 ```html
 <p> HTML is a markup language</p>
 ```
+- Opening tag: Name of the element wrapped in < and >
+- Content: Content of the element, in this example text. But is might be another element(child element).Some elements have no content (e.g.<img>)
+- Closing tag: Same as opening tag, but with a/.When element has no content, it's omitted
