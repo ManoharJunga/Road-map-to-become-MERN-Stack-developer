@@ -7,6 +7,6 @@
 
 - Web browsers understand HTML and render HTML code as websites
 
-'''html
+```html
 <p> HTML is a markup language</p>
-'''
+```
